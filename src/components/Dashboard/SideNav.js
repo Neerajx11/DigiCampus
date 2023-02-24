@@ -34,26 +34,37 @@ const SideNav = () => {
       <div className="text-[#161616] font-medium text-xl pl-8 pr-24 h-[7%]">
         DigiCampus
       </div>
+
       {/* menu icons */}
       <div className="list-none flex flex-col text-gray-400 h-[38%]">
-        <li className={liClass}>
-          <Home className={iconClass} />
-          <span>Overview</span>
-        </li>
-        <li className={liClass}>
-          <BarChart2 className={iconClass} />
-          <span>Updates</span>
-        </li>
+        <NavLink to="/overview">
+          <li
+            className={`${liClass} ${location === "/overview" && extraClass}`}
+          >
+            <Home className={iconClass} />
+            <span>Overview</span>
+          </li>
+        </NavLink>
+        <NavLink to="/notice">
+          <li className={`${liClass} ${location === "/notice" && extraClass}`}>
+            <BarChart2 className={iconClass} />
+            <span>Notice</span>
+          </li>
+        </NavLink>
         <NavLink to="/">
           <li className={`${liClass} ${location === "/" && extraClass}`}>
             <Folder className={`${iconClass}`} strokeWidth={3} />
             <span>Placement</span>
           </li>
         </NavLink>
-        <li className={liClass}>
-          <MessageSquare className={iconClass} />
-          <span>Attendance</span>
-        </li>
+        <NavLink to="/attendance">
+          <li
+            className={`${liClass} ${location === "/attendance" && extraClass}`}
+          >
+            <MessageSquare className={iconClass} />
+            <span>Attendance</span>
+          </li>
+        </NavLink>
         <NavLink to="/result">
           <li className={`${liClass} ${location === "/result" && extraClass}`}>
             <Calendar className={iconClass} />
@@ -61,7 +72,9 @@ const SideNav = () => {
           </li>
         </NavLink>
       </div>
+
       <div className="h-[40%]"></div>
+
       {/* setting and logout */}
       <div className="list-none text-gray-400 h-[15%]">
         <li className={liClass}>
