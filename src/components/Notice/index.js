@@ -57,9 +57,9 @@ const Notice = () => {
   const list = noticeData.map((el) => (
     <div
       key={v4()}
-      className="w-[250px] px-4 py-2 mx-2 mb-10 rounded shadow bg-slate-100"
+      className="w-[250px] px-4 py-2 mx-2 mb-10 rounded shadow bg-gray-50"
     >
-      <p className="w-full font-bold text-center">{el.title}</p>
+      <p className="w-full text-lg font-bold text-center">{el.title}</p>
       <p className="my-2 text-sm">{el.description}</p>
       <div className="flex items-center justify-between mt-4 mb-2">
         <div className="px-4 py-1 text-sm bg-blue-200 rounded-md cursor-pointer">
